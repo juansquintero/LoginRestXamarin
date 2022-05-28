@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="LoginPrueba.MainPage"
+             xmlns:local="clr-namespace:LoginPrueba.CustomRenderer"
+             xmlns:pass="clr-namespace:LoginPrueba.Models">
+    <StackLayout BackgroundColor="#e6e6e6">
+        <Grid>
+            <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                <Frame HeightRequest="200" BackgroundColor="Transparent" Padding="0" Margin="0">
+                    <Image x:Name="background_img" Aspect="AspectFill" Margin="0"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+                <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+
+                    <StackLayout>
+
+
+                        <StackLayout Margin="10">
+                            <Label Text="Bienvenido a" TextColor="Black" HorizontalOptions="Start" FontAttributes="None" FontSize="22"/>
+                            <Label Text="HORUS" TextColor="Black" HorizontalOptions="Start" FontAttributes="Bold" FontSize="22"/>
+                        </StackLayout>
+
+                        <StackLayout Padding="0" Margin="15,10">
+                            <Label Text="Email" TextColor="#828282" FontSize="12"/>
+                            <Frame BackgroundColor="#f7fbf6" BorderColor="Transparent" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <local:CustomEntry x:Name="email_entry" Placeholder="Email" FontSize="16" TextColor="#1a1a1a" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                </StackLayout>
+                            </Frame>
+                            <Label Text="Constraseña" TextColor="#828282" FontSize="12"/>
+                            <Frame BackgroundColor="#f7fbf6" BorderColor="Transparent" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <local:CustomEntry x:Name="password_entry" Placeholder="Password" FontSize="16" IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}" TextColor="#1a1a1a" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                    <Frame HeightRequest="40" WidthRequest="40" Padding="0" Margin="0">
+                                        <ImageButton VerticalOptions="Center"
+                                                 Margin="0,0,10,0"
+                                                 HeightRequest="20"
+                                                 HorizontalOptions="End"
+                                                 x:Name="image_pass"
+                                                 Source="ic_eye_hide">
+                                            <ImageButton.Triggers>
+                                                <EventTrigger Event="Clicked">
+                                                    <pass:ShowPasswordTriggerAction ShowIcon="eye_none_b.png"
+                                                                                 HideIcon="eye_b.png"
+                                                                                 x:Name="ShowPasswordActualTrigger"/>
+                                                </EventTrigger>
+                                            </ImageButton.Triggers>
+                                        </ImageButton>
+                                    </Frame>
+                                </StackLayout>
+                            </Frame>
+
+                            <StackLayout  Orientation="Horizontal">
+                                <Label Text="¿Olvidaste tu contraeña?" TextColor="LightGray" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                            <Button Text="Login" BackgroundColor="#f49390" TextColor="White" CornerRadius="30" FontSize="16" Clicked="Button_Clicked" />
+                            <StackLayout Margin="0,25,0,0" Padding="0">
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Label Text="Registrarme" TextColor="#828282" FontAttributes="Bold" FontSize="16"/>
+                            </StackLayout>
+                            <StackLayout Margin="0,25" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Frame BackgroundColor="White" HeightRequest="35" WidthRequest="45" HasShadow="False" BorderColor="Transparent" Margin="0" HorizontalOptions="Center" Padding="0">
+                                    <Image x:Name="instragram_g" Aspect="AspectFill" Margin="0"/>
+                                </Frame>
+                                <Frame BackgroundColor="Transparent" />
+                                <Frame HeightRequest="45" WidthRequest="35" CornerRadius="45" HasShadow="False" BorderColor="Transparent" Margin="0" HorizontalOptions="Center" Padding="0">
+                                    <Image x:Name="facebook_g" Aspect="AspectFill" Margin="0"/>
+                                </Frame>
+                            </StackLayout>
+
+                        </StackLayout>
+
+
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

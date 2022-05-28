@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginPrueba.Views.Retos"
+             xmlns:viewModel="clr-namespace:LoginPrueba.ViewModel">
+    
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Retos" FontSize="24" FontAttributes="Bold" TextColor="Black"/>
+            <StackLayout Orientation="Horizontal" >
+                <Label x:Name="current_points_lb" Text="" FontSize="14" TextColor="DarkGray"/>
+                <Label Text="/" FontSize="14" TextColor="DarkGray"/>
+                <Label x:Name="total_points_lb" Text="" FontSize="14" TextColor="DarkGray"/>
+            </StackLayout>
+            <ListView x:Name="data_view" RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="0" Margin="10,0,10,0"  BackgroundColor="#f49390">
+                                <Label x:Name="title_lb" Text="{Binding Title}" LineBreakMode="NoWrap" FontSize="16" FontAttributes="Bold"/>
+                                <Label x:Name="description_lb" Text="{Binding Description}" LineBreakMode="TailTruncation" FontSize="12"/>
+                                <Label Text="{Binding CurrentPoints}" FontSize="8"/>
+                                <Label Text="-" FontSize="8"/>
+                                <Label Text="{Binding TotalPoints}" FontSize="8"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
